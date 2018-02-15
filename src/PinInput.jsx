@@ -66,8 +66,10 @@ class PinInput extends Component {
   }
 
   render() {
+    const containerClassName = this.props.className || 'pincode-input-container'
+    const inputClassName = this.props.inputClassName || 'pincode-input-text'
     return (
-      <div style={this.props.style}  className='pincode-input-container'>
+      <div style={this.props.style}  className={containerClassName}>
         {this
           .values
           .map((e, i) => <PinItem
@@ -80,6 +82,7 @@ class PinInput extends Component {
             inputMode={ this.props.inputMode }
             validate={ this.props.validate }
             inputStyle={ this.props.inputStyle }
+            className = {inputClassName}
             inputFocusStyle={ this.props.inputFocusStyle }
           />)
         }
@@ -97,6 +100,8 @@ PinInput.propTypes = {
   focus: PropTypes.bool,
   onChange: PropTypes.func,
   inputMode: PropTypes.string,
+  className: PropTypes.string,
+  inputClassName: PropTypes.string,
   style: PropTypes.object, // eslint-disable-line react/forbid-prop-types
   inputStyle: PropTypes.object, // eslint-disable-line react/forbid-prop-types
   inputFocusStyle: PropTypes.object, // eslint-disable-line react/forbid-prop-types

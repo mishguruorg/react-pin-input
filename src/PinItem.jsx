@@ -91,7 +91,7 @@ class PinItem extends Component {
     const { type, inputMode, inputStyle, inputFocusStyle } = this.props;
     const inputType = this.props.type === 'numeric' ? 'tel' : (this.props.type || 'text');
     return (<input
-      className='pincode-input-text'
+      className={this.props.className}
       onChange={ this.onChange }
       onKeyDown={ this.onKeyDown }
       maxLength='1'
@@ -119,6 +119,7 @@ PinItem.propTypes = {
   type: PropTypes.string,
   inputMode: PropTypes.string,
   validate: PropTypes.func,
+  className: PropTypes.string,
   inputStyle: PropTypes.object.isRequired, // eslint-disable-line react/forbid-prop-types
   inputFocusStyle: PropTypes.object.isRequired, // eslint-disable-line react/forbid-prop-types
 };
