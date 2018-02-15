@@ -1,6 +1,6 @@
 {
   "name": "@mishguru/react-pin-input",
-  "version": "0.6.11",
+  "version": "0.6.12",
   "description": "React component for PIN like input",
   "main": "dist/bundle.js",
   "scripts": {
