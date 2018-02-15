@@ -1,22 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
-const styles = {
-  input: {
-    padding: 0,
-    margin: '0 2px',
-    textAlign: 'center',
-    border: '1px solid',
-    background: 'transparent',
-    width: '50px',
-    height: '50px',
-  },
-  inputFocus: {
-    outline: 'none',
-    boxShadow: 'none',
-  },
-};
-
 /**
  */
 class PinItem extends Component {
@@ -88,7 +72,7 @@ class PinItem extends Component {
 
   render() {
     const { focus, value } = this.state;
-    const { type, inputMode, inputStyle, inputFocusStyle } = this.props;
+    const { type, inputMode } = this.props;
     const inputType = this.props.type === 'numeric' ? 'tel' : (this.props.type || 'text');
     return (<input
       className={this.props.className}
@@ -101,12 +85,6 @@ class PinItem extends Component {
       ref={ n => (this.input = n) }
       onFocus={ this.onFocus }
       onBlur={ this.onBlur }
-      style={ Object.assign(
-        {},
-        styles.input,
-        inputStyle,
-        focus ? Object.assign({}, styles.inputFocus, inputFocusStyle) : {},
-      ) }
       value={ value }
     />);
   }
