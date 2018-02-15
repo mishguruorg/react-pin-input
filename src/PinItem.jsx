@@ -79,7 +79,6 @@ class PinItem extends Component {
       onChange={ this.onChange }
       onKeyDown={ this.onKeyDown }
       maxLength='1'
-      required
       autoComplete='off'
       type={ this.props.secret ? 'password' : inputType }
       pattern={ this.props.type === 'numeric' ? '[0-9]*' : '[A-Z0-9]*' }
