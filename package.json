@@ -4,6 +4,8 @@
   "description": "React component for PIN like input",
   "main": "dist/bundle.js",
   "scripts": {
+    "prepublish": "npm run build",
+    "postpublish": "git push origin master --tags",
     "test": "jest",
     "dev": "NODE_ENV=dev webpack-dev-server",
     "build": "rimraf dist && eslint src && NODE_ENV=prod webpack"
